@@ -171,20 +171,20 @@ public class Main {
 		Runtime.getRuntime().addShutdownHook(shutdownThread);
 
 		// Add shutdown on return pressed for eclipse
-		if (!Options.background.getValue() && System.console() == null) {
-			logger.info("No console detected (eclipse?). Press return to terminate analysis and print statistics.");
-			Thread eclipseShutdownThread = new Thread() { 
-				public void run() { 
-					try { 
-						System.in.read(); 
-					} catch (IOException e) { 
-						e.printStackTrace(); 
-					} 
-					System.exit(1);
-				} 
-			};
-			eclipseShutdownThread.start();
-		}
+		// if (!Options.background.getValue() && System.console() == null) {
+		// 	logger.info("No console detected (eclipse?). Press return to terminate analysis and print statistics.");
+		// 	Thread eclipseShutdownThread = new Thread() { 
+		// 		public void run() { 
+		// 			try { 
+		// 				System.in.read(); 
+		// 			} catch (IOException e) { 
+		// 				e.printStackTrace(); 
+		// 			} 
+		// 			System.exit(1);
+		// 		} 
+		// 	};
+		// 	eclipseShutdownThread.start();
+		// }
 		
 
 		// Necessary to stop shutdown thread on exceptions being thrown
